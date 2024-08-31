@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"
+        xmlns:th="www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Todos Page</title>
+</head>
+<body>
+
+    <div align="center" >
+        <div style="width:320px; border-style: solid">
+            <table border="1">
+                <thead>
+                <tr style="height:10px;">
+                    <th style="width:100px;">ID</th>
+                    <th style="width:100px;">Title</th>
+                    <th style="width:100px;">Completed</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="todo: ${todoList}" style="height:30px;">
+                    <td th:text="${todo.id}"></td>
+                    <td th:text="${todo.title}"></td>
+                    <td th:text="${todo.completed}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

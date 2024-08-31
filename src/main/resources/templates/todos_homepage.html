@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Todos HomePage</title>
+</head>
+<body>
+<div align="center">
+    <div>
+        <h1>Create a Todo</h1>
+        <p th:text="${message}"></p>
+        <br>
+        <br>
+    </div>
+
+    <br>
+    <div style="border-style: solid; width: 500px">
+        <br>
+        <form
+                form="form"
+                method="post"
+                th:action="@{/todo/create}"
+                th:object="${todoDto}"
+        >
+            <label>ID:</label>
+            <p><em>Ids are automatically generated</em></p>
+            <br>
+            <label>Title:</label>
+            <input type="text" th:field="*{title}"/>
+            <br>
+            <label>Completed:</label>
+            <input type="radio" th:field="*{completed}" value="false"/> NO
+            <input type="radio" th:field="*{completed}" value="true"/> Yes
+            <br>
+            <br>
+            <button type="submit">Create</button>
+        </form>
+        <br>
+    </div>
+
+</div>
+
+</body>
+</html>
